@@ -37,7 +37,6 @@ class Location extends Scene {
         }
     
     handleChoice(choice) {
-        // Handle any actions (item collection, flag setting) first
         if (choice && choice.Action) {
             if (choice.Action.addItem) {
                 this.engine.inventory.push(choice.Action.addItem);
@@ -49,7 +48,6 @@ class Location extends Scene {
             }
         }
         
-        // Then proceed with navigation
         if (choice && choice.Target) {
             this.engine.show("> " + choice.Text);
             this.engine.gotoScene(Location, choice.Target);

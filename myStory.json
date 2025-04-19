@@ -1,0 +1,338 @@
+{
+    "Title": "Murder at Growan Manor",
+    "Credits": "Created by Matt Embree (mgembree@ucsc.edu).",
+    "InitialLocation": "Manor Entrance",
+    "Locations": {
+        "Manor Entrance": {
+            "Body": "This is Growan Manor,you've been brought in to investigate the murder of it's lord Sir Growan.",
+            "Choices": [
+                {
+                    "Text": "Inside",
+                    "Target": "mainhall"
+                },
+                {
+                    "Text": "Open Cellar Door",
+                    "Target": "Cellar",
+                    "Requires": {"item": "Cellar Key"}
+                }
+            ]
+        },
+        "Cellar": {
+          "Body": "It's hard to see in the dark cellar and with only a small lamp<br> You stumble across the body of a servant, stabbed in the same way that the lord was.",
+            "Choices":[
+                {
+                       "Text":"Manor Entrance",
+                       "Target": "Manor Entrance" 
+                }
+        ]
+        },
+        "mainhall": {
+            "Body": "You've entered the main hall<br>5 guests pace nervously around the room and mumble amongst themselves. ",
+            "Choices": [
+                {
+                    "Text": "Guest 1",
+                    "Target": "Paul"
+                },
+                {
+                    "Text": "Guest 2",
+                    "Target": "Rachel"
+                },
+                {
+                    "Text": "Guest 3",
+                    "Target": "Michelle"
+                },
+                {
+                    "Text": "Guest 4",
+                    "Target": "Roger"
+                },
+                {
+                    "Text": "Guest 5",
+                    "Target": "Porter Growan"
+                },
+                {
+                    "Text": "West Hall",
+                    "Target": "West Hall"
+                },
+                {
+                    "Text": "Upstairs",
+                    "Target": "Upstairs"
+                },
+                {
+                    "Text":"Outside",
+                    "Target":"Manor Entrance"
+                },
+                {
+                    "Text": "Solve the case",
+                    "Target":"Decide",
+                    "Requires": {"flag": "found_weapon"}
+                }
+
+                
+
+
+            ]
+        },
+        "Rachel": {
+            "Body": "Rachel, a friend of the lord.<br>\" I just can't believe it. He was the nicest man who would do this to him? Please find who did this. \" ",
+            "Choices": [{
+              "Text": "Main Hall",
+              "Target": "mainhall"
+            }]
+        },
+        "Paul": {
+            "Body": "Paul, the lord's merchant.<br> Paul is in charge of running the jewelry stores for the lord.",
+            "Choices": [{
+                "Text": "Main Hall",
+                "Target": "mainhall"
+            }]
+        },
+        "Michelle": {
+            "Body": "Michelle, the local town's mayor.<br> \"I can't say I was the fondest of the mayor, he has been absent from helping the town in times of need.\"",
+            "Choices": [{
+              "Text": "Main Hall",
+              "Target": "mainhall"      
+            }]
+        },
+        "Roger": {
+            "Body": "Business Partner of the lord, Roger is the co-owner of the Jewelry empire that Lord Growan has built.",
+            "Choices": [{
+              "Text": "Main Hall",
+              "Target": "mainhall"    
+            }]
+        },
+        "Porter Growan": {
+            "Body": "Porter Growan, the son of the Lord has few reasons to want to kill his father, he is not meant to inherit his business and land.<br> \"I don't trust Roger, I saw him talking to one of the servants earlier who looked terrified.\"",
+            "Choices": [{
+              "Text": "Main Hall",
+              "Target": "mainhall"
+            }
+            ]
+        },
+        "West Hall": {
+            "Body": "In the west hall you find the guest rooms, perhaps there are clues in their rooms to tie them to a crime.",
+            "Choices": [
+                {
+                    "Text": "Back to Main Hall",
+                    "Target": "mainhall"
+                },
+                { 
+                    "Text": "Rachel's Room",
+                    "Target": "Rachelroom"
+                },
+                { 
+                    "Text": "Roger's Room",
+                    "Target": "Rogerroom"
+                },
+                { 
+                    "Text": "Michelle's Room",
+                    "Target": "Michelleroom"
+                },
+                { 
+                    "Text": "Porter Growan's Room",
+                    "Target": "Porterroom"
+                },
+                { 
+                    "Text": "Paul's Room",
+                    "Target": "Paulroom"
+                }
+            ]
+        },
+        "Rachelroom": {
+            "Body": "A gift for the lord sits on the foot of the bed, unopened.",
+            "Choices": [{
+              "Text": "Main Hall",
+              "Target": "mainhall"
+            },
+            {
+                "Text":"Open the gift",
+                "Target": "Gift"
+            }
+            ]
+        },
+        "Gift":{
+            "Body":"Inside the box is an old photo, probably about 30 years old, showing Rachel and the Lord at the lake.",
+            "Choices":[
+                {
+                    "Text":"Rachel's Room",
+                    "Target":"Rachelroom"
+                }
+            ]
+        },
+        "Paulroom": {
+            "Body": "Paul had obviously made himself at home, emptying his entire suitcase, and laying out business documents to later show the lord.",
+            "Choices": [{
+                "Text": "Main Hall",
+                "Target": "mainhall"
+            }]
+        },
+        "Michelleroom": {
+            "Body": "On the guest's desk a folder containing documents catches your eye.",
+            "Choices": [{
+              "Text": "Main Hall",
+              "Target": "mainhall"      
+            },
+            {
+                "Text":"Folder",
+                "Target":"Folder"
+            }
+        ]
+        },
+        "Folder": {
+            "Body": "In the folder is a court document asking the lord for financial aid",
+            "Choices":[
+                {
+                    "Text": "Michelle's Room",
+                    "Target": "Michelleroom"
+                }
+            ]
+        },
+        "Rogerroom": {
+            "Body": "Roger's Room is specifically clean, even his suitcase had yet to be unpacked. It was as if he hadn't even touched his own room.",
+            "Choices": [{
+              "Text": "Main Hall",
+              "Target": "mainhall"    
+            }]
+        },
+        "Porterroom": {
+            "Body": "The painting on the wall is off center, and looks like the paint has been scraped around it.",
+            "Choices": [{
+              "Text": "Main Hall",
+              "Target": "mainhall"
+            },
+            {   
+                "Text": "Examine painting",
+                "Target": "Painting"
+            }
+            ]
+        },
+        "Painting": {
+            "Body":"You remove the painting off its hinge to find a secret compartment. A bloody knife and gloves are stashed here.",
+            "Choices": [{
+                "Text": "Porter Growan's Room",
+                "Target": "Porterroom",
+                "Action": { "setFlag": "found_weapon"}
+            }]
+        },
+        "Upstairs": {
+            "Body": "Up the grand staircase, you look out over the guests underneath the chandelier.",
+            "Choices": [
+                {
+                    "Text": "Back to Main Hall",
+                    "Target": "mainhall"
+                },
+                { 
+                    "Text": "West - Library",
+                    "Target": "Library"
+                },
+                { 
+                    "Text": "East - Office",
+                    "Target": "Office" 
+                }
+            ]
+        },
+        "Office": {
+            "Body": " Sir Growan's Office: The Office holds the lord's greatest secrets, how he kept his business, and all of the things he did in the shadows.",
+            "Choices": [
+                {
+                    "Text": "Main Hall",
+                    "Target": "mainhall"
+                },
+             
+                {
+                    "Text": "The top drawer is slightly ajar, open it?",
+                    "Target":"Open"
+                }
+            ]
+        },
+        "Open": {
+            "Body": "Inside the drawer lies the key to the cellar",
+            "Choices": [
+                {
+                    "Text": "Office",
+                    "Target": "Office"
+                },
+                {
+                    "Text": "Pick up cellar key",
+                    "Action": {"addItem":"Cellar Key"},
+                    "Target":"Office"
+                }
+            ]
+        },
+        "Library": {
+            "Body": "The Old manor Library, full of books older than it's residents.",
+            "Choices": [
+                    {
+                        "Text": "Examine Bookshelves",
+                        "Target": "Bookshelf"
+                    },
+                    {
+                        "Text": "Back to Main Hall",
+                        "Target": "Main Hall"
+                    }
+            ]
+        },
+        "BookShelf":{
+            "Body": "The bookshelf holds antique books from hundreds of years ago, passed down through his family. \n One book has been pulled out and not put back all the way",
+            "Choices": [
+            {
+                "Text":"Examine ajar book",
+                "Target":"book"
+            },
+            {
+                "Text": "Back to Main Hall",
+                "Target": "Main Hall"
+            }
+            ]
+        },
+        "book":{
+            "Body": "The title of the book: \"Betrayal\" Who would use a book to figure out how to betray someone?",
+            "Choices": [
+                {
+                    "Text": "Main Hall",
+                    "Target": "mainhall"
+                }
+            ]
+        },
+        "Decide": {
+            "Body": "You've gathered enough clues to figure out who it was.",
+            "Choices": [
+                
+                { 
+                    "Text": "Rachel",
+                    "Target": "WRONG"
+                },
+                { 
+                    "Text": "Roger",
+                    "Target": "WIN"
+                },
+                { 
+                    "Text": "Michelle",
+                    "Target": "WRONG"
+                },
+                { 
+                    "Text": "Porter",
+                    "Target": "WRONG"
+                },
+                { 
+                    "Text": "Paul",
+                    "Target": "WRONG"
+                }
+            ]
+
+        },
+        "WRONG":{
+            "Body": "You chose the wrong suspect, and the killer got away with it!<br>",
+            "Choices":[
+                {
+                    "Text": "Try again",
+                    "Target": "Decide"
+                }
+            ]
+        },
+        "WIN":{
+            "Body": "You successfully solved the case and prevented innocent people from being jailed <br>",
+            "Text":"Win"
+        }
+
+    }
+}
